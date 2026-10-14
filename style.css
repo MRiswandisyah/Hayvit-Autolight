@@ -1,0 +1,233 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CSS Variables */
+:root {
+    --primary: #8b5e3c;
+    --primary-dark: #5f3d26;
+    --background: #f8f5f1;
+    --text: #333333;
+    --white: #ffffff;
+    --border: #dddddd;
+}
+
+/* Global Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    color: var(--text);
+    background-color: var(--white);
+    line-height: 1.6;
+}
+
+/* Header Styling dengan Background Image & Overlay */
+header {
+    background-image: url("biled.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--white);
+    padding: 3rem 1.5rem;
+    text-align: center;
+    position: relative;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+header h1, header p {
+    position: relative;
+    z-index: 1;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Navigation Bar (Flexbox) */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+    background-color: var(--primary-dark);
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffd8a8;
+}
+
+/* Main & Section Styling */
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 1.5rem;
+}
+
+section {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--border);
+
+section h2 {
+    font-size: 2rem;
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    background-color: var(--background);
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    color: var(--primary-dark);
+}
+
+.hero p {
+    max-width: 650px;
+    margin: 0 auto 2rem;
+}
+
+/* About Section */
+#about {
+    background-color: var(--white);
+    text-align: center;
+}
+
+#about p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Menu Layout (CSS Grid) */
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.menu-card {
+    background-color: var(--background);
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+}
+
+.menu-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.menu-card h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.menu-card p {
+    margin-bottom: 1rem;
+}
+
+.menu-card .price {
+    font-weight: bold;
+    color: var(--primary-dark);
+    margin-top: 1rem;
+}
+
+/* Form Kontak & Input Styling */
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+/* Button Styling */
+button[type="submit"], .button {
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover, .button:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Footer Styling */
+footer {
+    background-color: var(--primary-dark);
+    color: var(--white);
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+/* Responsive Design (Media Queries) */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+    }
+    .hero h2 {
+        font-size: 2rem;
+    }
+    .menu-container {
+        grid-template-columns: 1fr;
+    }
+    section {
+        padding: 3rem 1rem;
+    }
+}
